@@ -31,9 +31,9 @@ public class BookEndpoint {
     ) {
         final List<Book> allBooks = Arrays.asList(store.getBook());
         final List<Book> entities = allBooks.stream().skip(queryParams.per_page * queryParams.page).limit(queryParams.per_page).collect(Collectors.toList());
-        final Paginated paginated = new Paginated<Book>(entities, queryParams.page, allBooks.size() / queryParams.per_page, allBooks.size());
+        final Paginated<Book> paginated = new Paginated<Book>(entities, queryParams.page,queryParams.per_page, allBooks.size() / queryParams.per_page, allBooks.size());
 
-        asyncResponse.resume(entities);
+        asyncResponse.resume(paginated);
     }
 
 

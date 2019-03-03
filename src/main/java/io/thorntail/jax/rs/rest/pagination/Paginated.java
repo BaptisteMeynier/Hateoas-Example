@@ -6,21 +6,31 @@ public class Paginated<T> {
 
     private List<T> entities;
     private int currentPage;
+    private int perPage;
     private int pageCount;
     private int totalCount;
 
     public Paginated() {
     }
 
-    public Paginated(List<T> entities, int currentPage, int pageCount, int totalCount) {
+    public Paginated(List<T> entities, int currentPage, int perPage, int pageCount, int totalCount) {
         this.entities = entities;
         this.currentPage = currentPage;
+        this.perPage = perPage;
         this.pageCount = pageCount;
         this.totalCount = totalCount;
     }
 
     public List<T> getEntities() {
         return entities;
+    }
+
+    public int getPerPage() {
+        return perPage;
+    }
+
+    public void setPerPage(int perPage) {
+        this.perPage = perPage;
     }
 
     public void setEntities(List<T> entities) {

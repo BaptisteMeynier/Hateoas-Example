@@ -66,7 +66,7 @@ public class LinkPagination {
         }
 
         @Override
-        public EndStep totalPageCount(int totalEntityCount) {
+        public EndStep totalPageCount(int totalPageCount) {
             this.totalPageCount = totalPageCount;
             return this;
         }
